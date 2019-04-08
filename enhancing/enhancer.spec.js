@@ -16,7 +16,7 @@ const rockOfTheMilly = {
 const brandNewGuitar = {
   name: "Brand New Guitar",
   durability: 68,
-  enhancement: 19
+  enhancement: 20
 };
 
 const teacupOfTears = {
@@ -27,6 +27,7 @@ const teacupOfTears = {
 
 describe("enhancer.js", () => {
   describe("enhancer", () => {
+    //REPAIR
     it("should return a new item with the durability === 100", () => {
       expect(enhancer.repair(superDab)).toEqual({
         ...superDab,
@@ -37,8 +38,13 @@ describe("enhancer.js", () => {
         durability: 100
       });
     });
-    ///Todos
-    it.todo("should enhance if succeeded");
+    //SUCCEED
+    it("should enhance if succeeds", () => {
+      expect(enhancer.succeed(brandNewGuitar)).toEqual(brandNewGuitar);
+    });
+
+    //Todos
+    it.todo("should enhance if succeeds");
     it.todo("should fail to enhance");
   });
 });
