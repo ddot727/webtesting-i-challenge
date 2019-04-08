@@ -10,7 +10,7 @@ const superDab = {
 const rockOfTheMilly = {
   name: "Rock of The Milly",
   durability: 100,
-  enhancement: 7
+  enhancement: 15
 };
 
 const brandNewGuitar = {
@@ -46,9 +46,25 @@ describe("enhancer.js", () => {
         enhancement: 15
       });
     });
+    //FAIL
+    it("should fail to enhance", () => {
+      expect(enhancer.fail(superDab)).toEqual({
+        ...superDab,
+        durability: 38
+      });
+      expect(enhancer.fail(rockOfTheMilly)).toEqual({
+        ...rockOfTheMilly,
+        durability: 90
+      });
+      expect(enhancer.fail(brandNewGuitar)).toEqual({
+        ...brandNewGuitar,
+        durability: 58,
+        enhancement: 19
+      });
+    });
 
     //Todos
     // it.todo("should enhance if succeeds");
-    it.todo("should fail to enhance");
+    // it.todo("should fail to enhance");
   });
 });
