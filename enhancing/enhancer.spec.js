@@ -41,10 +41,14 @@ describe("enhancer.js", () => {
     //SUCCEED
     it("should enhance if succeeds", () => {
       expect(enhancer.succeed(brandNewGuitar)).toEqual(brandNewGuitar);
+      expect(enhancer.succeed(teacupOfTears)).toEqual({
+        ...teacupOfTears,
+        enhancement: 15
+      });
     });
 
     //Todos
-    it.todo("should enhance if succeeds");
+    // it.todo("should enhance if succeeds");
     it.todo("should fail to enhance");
   });
 });
