@@ -25,6 +25,12 @@ const teacupOfTears = {
   enhancement: 14
 };
 
+const turkeyLeg = {
+  name: "Turkey Leg",
+  durability: 3,
+  enhancement: 0
+};
+
 describe("enhancer.js", () => {
   describe("enhancer", () => {
     //REPAIR
@@ -61,6 +67,14 @@ describe("enhancer.js", () => {
         durability: 58,
         enhancement: 19
       });
+    });
+    //GET
+    it("should add enhancement stat to item name", () => {
+      expect(enhancer.get(rockOfTheMilly)).toEqual({
+        ...rockOfTheMilly,
+        name: "[+15] Rock of The Milly"
+      });
+      expect(enhancer.get(turkeyLeg)).toEqual(turkeyLeg);
     });
 
     //Todos
